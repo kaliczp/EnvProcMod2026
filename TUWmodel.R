@@ -6,7 +6,13 @@ library(TUWmodel)
 ## Identify the working folder and copy ptq.txt file, form Data sub-folder
 getwd()
 
+## Load dataset
 ptq <- read.table("ptq.txt", sep = "\t", head = TRUE, skip = 1)
+
+plot(ptq$Temp, type = "l")
+
+
+
 library(SPEI)
 plot(thornthwaite(ptq[,"Temp"], 37.6475)/30, type = "l")
 Evaplight <- thornthwaite(ptq[,"Temp"], 37.6475)/30
