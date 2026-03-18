@@ -10,9 +10,16 @@ getwd()
 ptq <- read.table("ptq.txt", sep = "\t", head = TRUE, skip = 1)
 
 plot(ptq$Temp, type = "l")
+
+## Genetate the dates for the whole window
 ptqDate <- seq(as.Date("1981-01-01"),as.Date("1991-12-31"))
 plot(ptqDate, ptq$Temp, type = "l")
 
+## Time-series
+install.packages("xts")
+library(xts)
+ptq.xts <- xts(ptq[,-1], ptqDate)
+plot(ptq.xts$Temp)
 
 
 library(SPEI)
