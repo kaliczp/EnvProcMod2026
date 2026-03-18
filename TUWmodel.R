@@ -10,6 +10,8 @@ getwd()
 ptq <- read.table("ptq.txt", sep = "\t", head = TRUE, skip = 1)
 
 plot(ptq$Temp, type = "l")
+ptqDate <- seq(as.Date("1981-01-01"),as.Date("1991-12-31"))
+plot(ptqDate, ptq$Temp, type = "l")
 
 
 
