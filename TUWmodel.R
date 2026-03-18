@@ -1,3 +1,5 @@
+install.packages("TUWmodel")
+
 library(TUWmodel)
 ptq <- read.table("ptq.txt", sep = "\t", head = TRUE, skip = 1)
 library(SPEI)
@@ -13,12 +15,14 @@ simLight <- TUWmodel(prec=ptq[,"Prec."],
                              Ts = 0,
                              Tm = -0.336,
                              LPrat = 0.934,
-                             FC = 121,
-                             BETA = 2.52,
-                             k0 = 0.473,
-                             k1 = 9.06,
-                             k2 = 142,
-                             lsuz = 50.1,
-                             cperc = 2.38,
-                             bmax = 10,
+                             FC = 120,
+                             BETA = 2,
+                             k0 = 0.25,
+                             k1 = 0.1,
+                             k2 = 0.01,
+                             lsuz = 30,
+                             cperc = 1,
+                             bmax = 1,
                              croute = 25))
+
+
