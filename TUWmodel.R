@@ -52,7 +52,8 @@ simLight <- TUWmodel(prec=ptq[,"Prec."],
                              croute = 25))
 
 ## Visualise result
-plot(ptq.xts[,"Qsim"]) # measured discharge
+Qobs <- ptq.xts[,"Qsim"] # measured discharge
+plot(Qobs)
 Qmod <- xts(as.numeric((simLight$q)), ptqDate) # modelled discharge
 plot(Qmod)
 
