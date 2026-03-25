@@ -61,7 +61,7 @@ Qmod <- xts(as.numeric((simLight$q)), ptqDate) # modelled discharge
 plot(Qmod)
 
 plot(Qmod['1981'])
-lines((ptq.xts["1981","Qsim"]))
+lines(Qobs["1981"], col = "blue", lwd = 2)
 
 ## Nash-Sutcliff
 1 - sum(coredata(Qobs - Qmod)^2) / sum(coredata(Qobs - mean(Qobs))^2)
