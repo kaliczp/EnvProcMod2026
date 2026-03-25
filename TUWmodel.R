@@ -59,3 +59,6 @@ plot(Qmod)
 
 plot(Qmod['1981'])
 lines((ptq.xts["1981","Qsim"]))
+
+## Nash-Sutcliff
+1 - sum(coredata(Qobs - Qmod)^2) / sum(coredata(Qobs - mean(Qobs))^2)
