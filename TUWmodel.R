@@ -28,6 +28,7 @@ plot(ptq.xts["1981","Temp"])
 plot(ptq.xts["1981-03","Temp"])
 plot(ptq.xts["1981-03/1981-05","Temp"])
 
+install.packages("SPEI")
 library(SPEI)
 plot(thornthwaite(ptq[,"Temp"], 37.6475)/30, type = "l")
 Evaplight <- thornthwaite(ptq[,"Temp"], 37.6475)/30
