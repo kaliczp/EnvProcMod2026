@@ -57,3 +57,5 @@ plot(Qobs)
 Qmod <- xts(as.numeric((simLight$q)), ptqDate) # modelled discharge
 plot(Qmod)
 
+plot(Qmod['1981'])
+lines((ptq.xts["1981","Qsim"]))
