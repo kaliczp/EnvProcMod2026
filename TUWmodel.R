@@ -32,6 +32,8 @@ install.packages("SPEI")
 library(SPEI)
 plot(thornthwaite(ptq[,"Temp"], 37.6475)/30, type = "l")
 Evaplight <- thornthwaite(ptq[,"Temp"], 37.6475)/30
+
+## Simulation with TUWmodel
 simLight <- TUWmodel(prec=ptq[,"Prec."],
                          airt=ptq[,"Temp"],
                          ep=Evaplight,
@@ -54,9 +56,13 @@ simLight <- TUWmodel(prec=ptq[,"Prec."],
 
 str(simLight) # Let's see the structure of the result
 
-## Visualise result
+### Visualise result
+
+## Get the observations
 Qobs <- ptq.xts[,"Qsim"] # measured discharge
 plot(Qobs)
+
+## Get the modeled time-series
 Qmod <- xts(as.numeric((simLight$q)), ptqDate) # modelled discharge
 plot(Qmod)
 
